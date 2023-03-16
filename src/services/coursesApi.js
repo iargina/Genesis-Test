@@ -12,7 +12,7 @@ export const gettingCourses = async () => {
   const courses = await coursesApi.get();
   const coursesToShow = courses.data.results;
   const coursesArr = coursesToShow.map(
-    ({ id, title, tags, description, previewImageLink, rating }) => ({
+    ({ id, tags, title, description, previewImageLink, rating }) => ({
       id,
       title,
       tags,

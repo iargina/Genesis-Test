@@ -1,0 +1,41 @@
+.courseDetail {
+  padding: 30px 50px;
+}
+.button {
+  padding: 10px 50px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #6126ad, #c6a6d8, #e2bcda);
+  font-weight: 600;
+}
+.courseWrap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+  padding: 10px 35px;
+}
+.courseImg {
+  min-width: 20%;
+  object-fit: contain;
+}
+.courseInfo {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+}
+.title {
+  font-size: 45px;
+}
+.text {
+  font-size: 20px;
+  margin: 0;
+}
+.link {
+  font-size: 45px;
+  list-style: none;
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: 600;
+}

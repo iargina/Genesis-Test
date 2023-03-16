@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+}
+.list {
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 550px;
+}
+.link {
+  text-decoration: none;
+}
+.text {
+  text-decoration: none;
+}

@@ -5,13 +5,41 @@ const posterPath = '/cover.webp';
 export const CoursesGallery = ({ coursesArr }) => {
   const location = useLocation();
 
-  return coursesArr.map(course => (
-    <li key={course.id} className={css.item}>
-      <Link to={course.id} className={css.link} state={{ from: location }}>
-        <img src={course.previewImageLink + posterPath} alt="" />
-      </Link>
-      <h3 className={css.text}>{course.title}</h3>
-      <p className={css.text}> Rating: {course.rating}</p>
-    </li>
-  ));
+  return coursesArr.map(course => {
+    let skillsStr = null;
+    if (course.skills) {
+      skillsStr = course.skills.join(', ').toLowerCase();
+    }
+    return (
+      <li key={course.id} className={css.item}>
+        <Link to={course.id} className={css.link} state={{ from: location }}>
+          <img
+            src={course.previewImageLink + posterPath}
+            alt=""
+            className={css.poster}
+          />
+        </Link>
+        <h3 className={css.title}>{course.title}</h3>
+        <p className={css.text}>
+          <span className={css.span}> Tags: </span>
+          {course.tags.join(', ')}
+        </p>
+        <p className={css.text}>
+          <span className={css.span}>Rating: </span>
+          {course.rating}
+        </p>
+        <p className={css.text}>
+          <span className={css.span}> Duration:</span> {course.lessonsCount}
+        </p>
+        {skillsStr && (
+          <p className={css.text}>
+            <span className={css.span}>Skills:</span> {skillsStr}
+          </p>
+        )}
+        <p className={css.text}>
+          <span className={css.span}>About course:</span> {course.description}
+        </p>
+      </li>
+    );
+  });
 };

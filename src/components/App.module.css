@@ -1,6 +1,15 @@
 .container {
   width: 100%;
 }
+.wrapper {
+  display: flex;
+  color: #fff;
+  background: linear-gradient(45deg, #7f6ccc, #4b2bca, #110446);
+  background-size: 400% 400%;
+  animation: bgLinear 25s ease infinite;
+  padding: 50px;
+  justify-content: space-between;
+}
 .nav {
   display: flex;
   gap: 100px;
@@ -8,9 +17,6 @@
   align-items: center;
   padding: 50px;
   color: #fff;
-  background: linear-gradient(45deg, #6126ad, #c6a6d8, #e2bcda);
-  background-size: 400% 400%;
-  animation: bgLinear 25s ease infinite;
 }
 @keyframes bgLinear {
   0 {
@@ -27,6 +33,12 @@
 }
 .link {
   font-size: 30px;
+  color: rgb(255, 249, 249);
+}
+
+.title {
+  font-size: 50px;
+}
+.text {
   color: black;
-  text-decoration: none;
 }

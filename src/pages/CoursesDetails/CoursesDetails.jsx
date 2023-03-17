@@ -4,13 +4,14 @@ import { gettingCourseDetails } from 'services/coursesDetails';
 import css from './CoursesDetails.module.css';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
+import ReactHlsPlayer from 'react-hls-player';
 
 export const CoursesDetails = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    gettingCourseDetails(courseId).then(setCourse);
+    gettingCourseDetails(courseId).then(result => setCourse(result));
   }, [courseId]);
 
   const posterPath = '/cover.webp';
@@ -51,10 +52,44 @@ export const CoursesDetails = () => {
               <b>Description: </b>
               {description}
             </p>
-            {lessons.map(lesson => {
-              return <video src={lesson.link}></video>;
-            })}
           </div>
+        </div>
+        <div className={css.videoWrap}>
+          {lessons &&
+            lessons
+              .sort((a, b) => (a.order > b.order ? 1 : -1))
+              .map(lesson => {
+                if (lesson.status === 'locked') {
+                  return (
+                    <li className="lesson_button">
+                      <h3 className={css.titleLesson}>
+                        <b>Lesson {lesson.order}: </b> {lesson.title}
+                      </h3>
+                      <p className={css.textLesson}>Lesson is Locked</p>
+                    </li>
+                  );
+                }
+                if (!lesson.link) {
+                  return <p>Something Went Wrong</p>;
+                }
+                return (
+                  <li className="lesson_button">
+                    <h3 className={css.titleLesson}>
+                      <b>Lesson {lesson.order}: </b> {lesson.title}
+                    </h3>
+                    <div key={lesson.id} className={css.lessonWrap}>
+                      <ReactHlsPlayer
+                        src={lesson.link}
+                        autoPlay={false}
+                        controls={true}
+                        width="60%"
+                        height="auto"
+                        className="video"
+                      />
+                    </div>
+                  </li>
+                );
+              })}
         </div>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />

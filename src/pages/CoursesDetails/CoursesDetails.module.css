@@ -4,8 +4,10 @@
 .button {
   padding: 10px 50px;
   border-radius: 20px;
-  background: linear-gradient(45deg, #6126ad, #c6a6d8, #e2bcda);
+  border: none;
+  background: linear-gradient(45deg, #7f6ccc, #4b2bca, #110446);
   font-weight: 600;
+  color: white;
 }
 .courseWrap {
   display: flex;
@@ -15,8 +17,12 @@
   padding: 10px 35px;
 }
 .courseImg {
-  min-width: 20%;
+  min-width: 15%;
   object-fit: contain;
+  align-self: flex-start;
+}
+.courseImg:focus {
+  transform: scale(1.2, 1.2) rotate(5deg);
 }
 .courseInfo {
   padding: 30px;
@@ -38,4 +44,29 @@
   text-decoration: underline;
   font-size: 25px;
   font-weight: 600;
+}
+
+.videoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.lessonWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 50px;
+}
+
+.titleLesson {
+  font-size: 40px;
+  font-weight: 500;
+}
+.textLesson {
+  font-size: 20px;
+  font-weight: 400;
+  color: red;
 }

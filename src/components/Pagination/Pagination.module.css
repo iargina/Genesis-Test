@@ -1,0 +1,13 @@
+.page {
+  margin-right: 18px;
+  border-radius: 10px;
+  border: solid 1px #ececec;
+  background-color: transparent;
+}
+
+.activePage {
+  margin-right: 18px;
+  border-radius: 10px;
+  border: solid 1px #ececec;
+  background-color: #ececec;
+}

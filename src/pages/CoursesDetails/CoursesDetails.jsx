@@ -4,7 +4,6 @@ import { gettingCourseDetails } from 'services/coursesDetails';
 import css from './CoursesDetails.module.css';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
-import ReactHlsPlayer from 'react-hls-player';
 
 export const CoursesDetails = () => {
   const { courseId } = useParams();
@@ -78,14 +77,14 @@ export const CoursesDetails = () => {
                       <b>Lesson {lesson.order}: </b> {lesson.title}
                     </h3>
                     <div key={lesson.id} className={css.lessonWrap}>
-                      <ReactHlsPlayer
+                     {/*  <ReactHlsPlayer
                         src={lesson.link}
                         autoPlay={false}
                         controls={true}
                         width="60%"
                         height="auto"
                         className="video"
-                      />
+                      /> */}
                     </div>
                   </li>
                 );

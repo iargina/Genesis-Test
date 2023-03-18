@@ -1,0 +1,49 @@
+.title {
+  font-size: 45px;
+}
+.text {
+  font-size: 20px;
+  margin: 0;
+}
+.link {
+  font-size: 45px;
+  list-style: none;
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.videoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.lessonWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 50px;
+}
+
+.titleLesson {
+  font-size: 40px;
+  font-weight: 500;
+}
+.textLesson {
+  font-size: 20px;
+  font-weight: 400;
+  color: red;
+}
+.progressWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  align-items: center;
+}
+.progress {
+  width: 50%;
+}

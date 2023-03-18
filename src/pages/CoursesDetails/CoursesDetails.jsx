@@ -4,6 +4,7 @@ import { gettingCourseDetails } from 'services/coursesDetails';
 import css from './CoursesDetails.module.css';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Lessons } from 'components/Lessons/Lessons';
 
 export const CoursesDetails = () => {
   const { courseId } = useParams();
@@ -54,41 +55,7 @@ export const CoursesDetails = () => {
           </div>
         </div>
         <div className={css.videoWrap}>
-          {lessons &&
-            lessons
-              .sort((a, b) => (a.order > b.order ? 1 : -1))
-              .map(lesson => {
-                if (lesson.status === 'locked') {
-                  return (
-                    <li className="lesson_button">
-                      <h3 className={css.titleLesson}>
-                        <b>Lesson {lesson.order}: </b> {lesson.title}
-                      </h3>
-                      <p className={css.textLesson}>Lesson is Locked</p>
-                    </li>
-                  );
-                }
-                if (!lesson.link) {
-                  return <p>Something Went Wrong</p>;
-                }
-                return (
-                  <li className="lesson_button">
-                    <h3 className={css.titleLesson}>
-                      <b>Lesson {lesson.order}: </b> {lesson.title}
-                    </h3>
-                    <div key={lesson.id} className={css.lessonWrap}>
-                     {/*  <ReactHlsPlayer
-                        src={lesson.link}
-                        autoPlay={false}
-                        controls={true}
-                        width="60%"
-                        height="auto"
-                        className="video"
-                      /> */}
-                    </div>
-                  </li>
-                );
-              })}
+          <Lessons lessons={lessons} />
         </div>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />

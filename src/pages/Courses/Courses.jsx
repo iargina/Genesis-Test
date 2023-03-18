@@ -1,7 +1,7 @@
 import { gettingCourses } from 'services/coursesApi';
 import { useState, useEffect } from 'react';
 import css from './Courses.module.css';
-import { CoursesGallery } from 'components/CoursesGallery/CoursesGallery';
+import CoursesGallery from 'components/CoursesGallery/CoursesGallery';
 import { Pagination } from 'components/Pagination/Pagination';
 export const Courses = () => {
   const [coursesLibrary, setCourses] = useState([]);

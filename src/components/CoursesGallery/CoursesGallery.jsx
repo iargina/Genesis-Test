@@ -1,9 +1,10 @@
 import css from './CoursesGallery.module.css';
 import { Link, useLocation } from 'react-router-dom';
-const posterPath = '/cover.webp';
+import React from 'react';
 
-export const CoursesGallery = ({ coursesArr }) => {
+const CoursesGallery = ({ coursesArr }) => {
   const location = useLocation();
+  const posterPath = '/cover.webp';
 
   return coursesArr.map(course => {
     let skillsStr = null;
@@ -43,3 +44,5 @@ export const CoursesGallery = ({ coursesArr }) => {
     );
   });
 };
+
+export default React.memo(CoursesGallery);

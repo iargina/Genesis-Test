@@ -1,5 +1,7 @@
 .courseDetail {
-  padding: 30px 50px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  align-items: center;
 }
 .button {
   padding: 10px 50px;
@@ -11,13 +13,16 @@
 }
 .courseWrap {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   gap: 50px;
-  padding: 10px 35px;
+  padding: 10px;
 }
+
 .courseImg {
   min-width: 15%;
+  max-width: 85vw;
   object-fit: contain;
   align-self: flex-start;
 }
@@ -37,4 +42,19 @@
 .text {
   font-size: 20px;
   margin: 0;
+}
+@media (min-width: 780px) {
+  .courseImg {
+    min-width: 15%;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+  .courseWrap {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 35px;
+  }
+  .courseDetail {
+    padding: 30px 50px;
+  }
 }

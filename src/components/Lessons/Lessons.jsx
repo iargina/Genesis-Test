@@ -1,4 +1,5 @@
 import Lesson from 'components/Lesson/Lesson';
+import css from './Lessons.module.css';
 
 export const Lessons = ({ lessons }) => {
   if (!lessons) {
@@ -6,7 +7,7 @@ export const Lessons = ({ lessons }) => {
   }
 
   return (
-    <ul>
+    <ul className={css.list}>
       {lessons
         .sort((a, b) => (a.order > b.order ? 1 : -1))
         .map(lesson => {

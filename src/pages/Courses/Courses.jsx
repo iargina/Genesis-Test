@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import css from './Courses.module.css';
 import CoursesGallery from 'components/CoursesGallery/CoursesGallery';
 import { Pagination } from 'components/Pagination/Pagination';
+import { Loader } from 'components/Loader/Loader';
+
 export const Courses = () => {
   const [coursesLibrary, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -38,11 +40,11 @@ export const Courses = () => {
 
   return (
     <main className={css.main}>
+      {error && <p>{error}</p>}
+      {loading && <Loader />}
       <div className={css.container}>
         <ul className={css.list}>
           <CoursesGallery coursesArr={coursesToShow} />
-          {error && <p>{error}</p>}
-          {loading && <h4> Loading</h4>}
         </ul>
       </div>
       <Pagination

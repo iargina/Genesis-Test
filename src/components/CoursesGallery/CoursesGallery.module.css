@@ -28,6 +28,20 @@
 
 @media (min-width: 780px) {
   .item {
+    max-width: 35vw;
+  }
+  .text {
+    text-decoration: none;
+    max-width: 35vw;
+  }
+  .poster {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  .item {
     max-width: 25vw;
   }
   .text {

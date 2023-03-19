@@ -30,7 +30,8 @@ const CoursesGallery = ({ coursesArr }) => {
           {course.rating}
         </p>
         <p className={css.text}>
-          <span className={css.span}> Duration:</span> {course.lessonsCount}
+          <span className={css.span}> Duration:</span> {course.lessonsCount}{' '}
+          lessons
         </p>
         {skillsStr && (
           <p className={css.text}>

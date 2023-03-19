@@ -3,13 +3,23 @@
 }
 .wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #fff;
   background: linear-gradient(45deg, #7f6ccc, #4b2bca, #110446);
   background-size: 400% 400%;
   animation: bgLinear 25s ease infinite;
-  padding: 50px;
+  padding: 10px;
   justify-content: space-between;
 }
+@media (min-width: 780px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+  }
+}
+
 .nav {
   display: flex;
   gap: 100px;

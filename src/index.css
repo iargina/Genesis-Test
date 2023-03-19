@@ -27,3 +27,15 @@ h3 {
 a {
   text-decoration: none;
 }
+.accordion__button {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+.accordion {
+  border: none;
+}
+.accordion__panel {
+  display: flex;
+  justify-content: center;
+}
